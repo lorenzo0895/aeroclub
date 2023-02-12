@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="left">
+    © Copyright - Aeroclub Villa Cañás
+  </div>
+  <div class="center">
+    <div class="title">
+      <h2>VCC<span class="color-primary">.</span></h2>
+      <div class="dots">
+        <span *ngFor="let a of Array.from(Array(28).keys())">•</span>
+      </div>
+    </div>
+    <p>
+      Nuestro Aeroclub es una institución ubicada de <span class="color-primary">Villa Cañás</span> dedicada a la enseñanza
+      y práctica de la aviación. Con un equipo de instructores altamente capacitados
+      y una flota moderna, ofrecemos diferentes cursos y vuelos de recreación.
+      ¡Visitanos con nosotros y sentí la emoción de volar!
+    </p>
+    <div class="buttons">
+      <app-button>Nosotros</app-button>
+      <app-button [filled]="true">Contacto</app-button>
+    </div>
+    <div class="cards">
+      <app-card *ngFor="let data of cardsData" [data]="data"></app-card>
+    </div>
+  </div>
+  <div class="right">
+    <img src="./assets/icons/instagram.svg">
+    <img src="./assets/icons/facebook.svg">
+    <img src="./assets/icons/twitter.svg">
+  </div>
+</div>

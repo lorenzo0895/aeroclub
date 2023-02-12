@@ -1,0 +1,35 @@
+nav {
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 48px;
+  font-size: 1.3rem;
+  div {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    img {
+      height: 30px;
+      filter: invert(1);
+    }
+  }
+  ul {
+    height: 100%;
+    display: flex;
+    gap: 48px;
+    list-style: none;
+    align-items: center;
+    li {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  nav {
+    ul {
+      display: none;
+    }
+  }
+}
