@@ -8,6 +8,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { CardComponent } from './shared/components/card/card.component';
 import { ButtonComponent } from './shared/components/button/button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ButtonComponent } from './shared/components/button/button.component';
     NavbarComponent,
     CardComponent,
     ButtonComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
