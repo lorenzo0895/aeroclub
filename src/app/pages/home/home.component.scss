@@ -1,7 +1,5 @@
 .container {
-
-  gap: 24px;
-
+  
   .title {
     display: flex;
     justify-content: space-between;
@@ -61,10 +59,6 @@
 
     .cards {
       justify-content: center;
-
-      app-card {
-        width: clamp(400px, 50%, 450px);
-      }
     }
   }
 
