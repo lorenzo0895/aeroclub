@@ -1,3 +1,5 @@
+@use '../assets/scss/variables' as *;
+
 :host {
   display: flex;
   flex-direction: column;
@@ -20,7 +22,49 @@
 app-navbar {
   display: block;
 }
-
-main {
+.grid {
   flex-grow: 1;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: auto 60px 100px;
+  .copyright {
+    grid-area: 3/1/3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main {
+    grid-area: 1/1/2/4;
+    padding: 24px;
+  }
+  .social-networks {
+    grid-area: 2/1/3/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    img {
+      height: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: $mobile-breakpoint) {
+  .grid {
+    .copyright {
+      grid-area: 1/1/4/2;
+      writing-mode: vertical-lr;
+      padding-top: 36px;
+      justify-content: flex-start;
+      transform: rotateZ(180deg);
+    }
+    main {
+      grid-area: 1/2/4/3;
+      padding: 48px;
+    }
+    .social-networks {
+      grid-area: 1/3/4/4;
+      flex-direction: column;
+    }
+  }
 }
