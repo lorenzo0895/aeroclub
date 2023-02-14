@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 48px;
 
     h2 {
       font-size: 84px;
@@ -25,7 +26,6 @@
   }
 
   p {
-    padding-top: 48px;
     font-size: 24px;
   }
 
@@ -46,6 +46,17 @@
       width: 300px;
     }
   }
+
+  .metar-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    app-metar-card {
+      width: min(90%, 400px);
+    }
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -58,6 +69,10 @@
     }
 
     .cards {
+      justify-content: center;
+    }
+
+    .metar-cards {
       justify-content: center;
     }
   }

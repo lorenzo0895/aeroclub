@@ -1,14 +1,14 @@
 <app-navbar></app-navbar>
-<div class="grid">
+<div class="grid" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : null">
   <div class="copyright">
     © Copyright - Aeroclub Villa Cañás
   </div>
   <main>
-    <router-outlet></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
   </main>
   <div class="social-networks">
-    <img src="./assets/icons/instagram.svg">
-    <img src="./assets/icons/facebook.svg">
-    <img src="./assets/icons/twitter.svg">
+    <a href="https://www.instagram.com/aeroclubvcc"><img src="./assets/icons/instagram.svg"></a>
+    <a href="https://www.facebook.com/EscuelaVCC/"><img src="./assets/icons/facebook.svg"></a>
+    <a href=""><img src="./assets/icons/twitter.svg"></a>
   </div>
 </div>

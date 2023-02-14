@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
-:root {
-  --primary: #FFC505;
-}
-
+@use './assets/scss/variables' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 * {
@@ -17,9 +13,10 @@
 body {
   width: 100%;
   max-width: 100%;
+  background: $background;
 }
 
 .color-primary {
-  color: var(--primary);
-  filter: drop-shadow(0 0 10px var(--primary));
+  color: $primary;
+  filter: drop-shadow(0 0 10px $primary);
 }

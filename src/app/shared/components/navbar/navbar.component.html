@@ -1,11 +1,11 @@
-<nav>
+<nav [class.open]="open" (click)="onChangeOpen()">
   <div>
     <img src="./assets/img/logo.png">
     <span>Aeroclub VCC</span>
   </div>
   <ul>
-    <li>Home</li>
-    <li>Nosotros</li>
-    <li>Contacto</li>
+    <li routerLink="./">Home</li>
+    <li routerLink="./about">Nosotros</li>
+    <li routerLink="./contact">Contacto</li>
   </ul>
 </nav>

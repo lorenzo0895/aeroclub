@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ICardData } from 'src/app/shared/components/card/card.component';
-import { MetarService } from 'src/app/shared/services/metar.service';
+import { StoreService } from 'src/app/shared/services/store.service';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +14,14 @@ export class HomeComponent implements OnInit {
     { title: 'Piloto Comercial de Avión' },
     { title: 'Habilitación de Vuelo por Instrumentos' },
   ];
+  metarArray: any[] = [];
 
-  constructor(private _metarService: MetarService){}
+  constructor(private _storeService: StoreService) {}
 
-  ngOnInit() {
-    this._metarService.getData('SAAR').subscribe(console.log)
+  ngOnInit(): void {
+    this._storeService.data$.subscribe(res => {
+      this.metarArray = res?.metar?.slice?.(0,3) ?? [];
+    });
   }
+
 }

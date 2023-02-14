@@ -1,0 +1,31 @@
+<div class="container">
+  <h3>
+    <span>{{ data.icao }} - {{ data.station?.name }}</span>
+    <img
+      [src]="
+        expanded
+          ? './assets/icons/arrow-up.svg'
+          : './assets/icons/arrow-down.svg'
+      "
+      (click)="onChangeExpanded()"
+    />
+  </h3>
+  <p>{{ data.raw_text }}</p>
+  <p [class.not-expanded]="!expanded">
+    Hora UTC: {{ utcHour(data.observed) }}<br />
+    Hora local: {{ localHour(data.observed) }}<br />
+    Categoría de vuelo: {{ data.flight_category }}<br />
+    Temperatura: {{ data.temperature.celsius }}º<br />
+    Punto de rocío: {{ data.dewpoint.celsius }}º<br />
+    Viento: {{ data.wind?.speed_kts }}KT {{ data.wind?.degrees }}º<br />
+    Visibilidad: {{ data.visibility.meters }}<br />
+    Nubes: {{ data.clouds[0].code }}<br />
+    Presión: {{ data.barometer.hpa }}hpa<br />
+    Techo:
+    {{
+      data?.ceiling
+        ? data.ceiling.code + " - " + data.ceiling.feet + "ft"
+        : "-"
+    }}<br />
+  </p>
+</div>

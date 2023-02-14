@@ -6,10 +6,11 @@
     </div>
   </div>
   <p>
-    Nuestro Aeroclub es una institución ubicada en <span class="color-primary">Villa Cañás</span>
-    dedicada a la enseñanza y práctica de la aviación. Con un equipo de instructores altamente
-    capacitados y una flota moderna, ofrecemos diferentes cursos y vuelos de recreación.
-    ¡Visitanos y sentí la emoción de volar!
+    Nuestro Aeroclub es una institución ubicada en
+    <span class="color-primary">Villa Cañás</span>
+    dedicada a la enseñanza y práctica de la aviación. Con un equipo de
+    instructores altamente capacitados y una flota moderna, ofrecemos diferentes
+    cursos y vuelos de recreación. ¡Visitanos y sentí la emoción de volar!
   </p>
   <div class="buttons">
     <app-button>Nosotros</app-button>
@@ -17,5 +18,17 @@
   </div>
   <div class="cards">
     <app-card *ngFor="let data of cardsData" [data]="data"></app-card>
+  </div>
+  <div class="title">
+    <h2>METAR<span class="color-primary">.</span></h2>
+    <div class="dots">
+      <span *ngFor="let a of Array.from(Array(28).keys())">•</span>
+    </div>
+  </div>
+  <div class="metar-cards">
+    <app-metar-card
+      *ngFor="let data of metarArray"
+      [data]="data"
+    ></app-metar-card>
   </div>
 </div>

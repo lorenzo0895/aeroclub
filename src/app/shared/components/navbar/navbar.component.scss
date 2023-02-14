@@ -1,9 +1,15 @@
+@use "sass:color";
+@use '../../../../assets/scss/variables' as global;
+$nav-height: 120px;
+$background: color.adjust(global.$background, $alpha: -0.3);
+
 nav {
-  height: 120px;
+  height: $nav-height;
   display: flex;
   justify-content: space-between;
   padding: 24px 48px;
   font-size: 1.3rem;
+  position: relative;
   div {
     height: 100%;
     display: inline-flex;
@@ -28,9 +34,32 @@ nav {
 
 @media screen and (max-width: 900px) {
   nav {
+    flex-direction: column;
     padding: 24px;
+    transition: all .2s;
+    &.open {
+      background-color: $background;
+      ul {
+        max-height: 1000px;
+        padding: 0 24px 24px;
+        background-color: $background;
+      }
+    }
     ul {
-      display: none;
+      height: unset;;
+      position: absolute;
+      padding: 0;
+      top: 0 + $nav-height;
+      left: 0;
+      z-index: 1;
+      gap: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      max-height: 0;
+      transition: all .2s;
     }
   }
 }
